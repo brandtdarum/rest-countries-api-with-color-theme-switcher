@@ -1,0 +1,30 @@
+.searchbar {
+    max-width: fit-content;
+    padding: 1rem;
+    border-radius: 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    input, button {
+        border: 0;
+        margin: 0 8px;
+        background: transparent;
+    }
+
+    input {
+        min-width: 400px;
+    }
+
+    input:focus {
+        outline: none;
+    }
+    
+
+
+    img {
+        margin-top: 2px;
+        width: get-icon-size();
+    }
+}

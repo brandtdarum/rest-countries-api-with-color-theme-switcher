@@ -1,9 +1,5 @@
-$icon_size: 0.9rem;
-
 header {
     padding: 20px 40px;
-
-    background-color: get-neutral(6);
 
     display: flex;
     align-items: center;
@@ -27,11 +23,11 @@ header {
 
     img {
         margin-right: 5px;
-        width: $icon_size;
+        width: get-icon-size();
         transition: get-transition(2);
     }
     p {
-        font-size: $icon_size;
+        font-size: get-icon-size();
         font-weight: get-font-weight("normal");
     }
 }

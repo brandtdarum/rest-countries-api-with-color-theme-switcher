@@ -3,6 +3,7 @@
 
 @import "./components/Header.scss";
 @import "./components/Attribution.scss";
+@import "./components/MapSearch.scss";
 
 body {
     background-color: get-neutral(5);
@@ -12,6 +13,7 @@ body {
 }
 
 .element {
+    background-color: get-neutral(6);
     box-shadow: 0px 0px 5px 2px hsla(0, 0%, 0%, 0.1);
 }
 
