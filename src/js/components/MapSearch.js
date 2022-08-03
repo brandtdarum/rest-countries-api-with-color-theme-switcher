@@ -4,6 +4,8 @@ import blackdropdown from "./../../images/dropdown_black.svg";
 import whitedropdown from "./../../images/dropdown_white.svg";
 
 const MapSearch = ({darkMode}) => {
+    const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
+
     return (
         <div className="map_search">
             <section className="map_search_header">
@@ -15,9 +17,14 @@ const MapSearch = ({darkMode}) => {
                 </form>
                 <div className="dropdown">
                     <button className = {"element" + (darkMode? " dark_element": "")}>
-                        <span>Filter by Region</span>
-                        <img src={darkMode? blackdropdown: whitedropdown} alt="" />
+                        <span className = {darkMode? "dark_text": ""}>Filter by Region</span>
+                        <img src={darkMode? whitedropdown : blackdropdown} alt="" />
                     </button>
+                    <div className = {"element options " + (darkMode? " dark_element": "")}>
+                        {regions.map(e => (
+                            <a className = {darkMode? "dark_text": ""} href = "#"key = {e}>{e}</a>
+                        ))}
+                    </div>
                 </div>
             </section>
             <section className = "map_search_body">
