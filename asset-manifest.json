@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/rest-countries-api-with-color-theme-switcher/static/css/main.073c9b0a.css",
-    "main.js": "/rest-countries-api-with-color-theme-switcher/static/js/main.d2dfc248.js",
-    "static/js/787.12db54da.chunk.js": "/rest-countries-api-with-color-theme-switcher/static/js/787.12db54da.chunk.js",
-    "static/media/logo.svg": "/rest-countries-api-with-color-theme-switcher/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/rest-countries-api-with-color-theme-switcher/static/css/main.9c2ed839.css",
+    "main.js": "/rest-countries-api-with-color-theme-switcher/static/js/main.afd52f4f.js",
     "index.html": "/rest-countries-api-with-color-theme-switcher/index.html",
-    "main.073c9b0a.css.map": "/rest-countries-api-with-color-theme-switcher/static/css/main.073c9b0a.css.map",
-    "main.d2dfc248.js.map": "/rest-countries-api-with-color-theme-switcher/static/js/main.d2dfc248.js.map",
-    "787.12db54da.chunk.js.map": "/rest-countries-api-with-color-theme-switcher/static/js/787.12db54da.chunk.js.map"
+    "static/media/quarter_moon_black.svg": "/rest-countries-api-with-color-theme-switcher/static/media/quarter_moon_black.c8c7b828b88d97014060743fba3f61b6.svg",
+    "static/media/quarter_moon_white.svg": "/rest-countries-api-with-color-theme-switcher/static/media/quarter_moon_white.a27f52fa608ddd3a803f194c29efceb0.svg",
+    "static/media/search_black.svg": "/rest-countries-api-with-color-theme-switcher/static/media/search_black.ff719b02a5069f48b7a881b13979f068.svg",
+    "static/media/search_white.svg": "/rest-countries-api-with-color-theme-switcher/static/media/search_white.114d5a1dca4a938c2c6fe94be0a521a8.svg",
+    "static/media/dropdown_black.svg": "/rest-countries-api-with-color-theme-switcher/static/media/dropdown_black.b48075055e6a7e4766428eacf1c60e27.svg",
+    "static/media/dropdown_white.svg": "/rest-countries-api-with-color-theme-switcher/static/media/dropdown_white.91bdfc811c069c911d317d7852455e62.svg",
+    "main.9c2ed839.css.map": "/rest-countries-api-with-color-theme-switcher/static/css/main.9c2ed839.css.map",
+    "main.afd52f4f.js.map": "/rest-countries-api-with-color-theme-switcher/static/js/main.afd52f4f.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.d2dfc248.js"
+    "static/css/main.9c2ed839.css",
+    "static/js/main.afd52f4f.js"
   ]
 }
