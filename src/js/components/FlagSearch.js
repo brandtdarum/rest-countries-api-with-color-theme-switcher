@@ -2,13 +2,18 @@ import blacksearch from "./../../images/search_black.svg";
 import whitesearch from "./../../images/search_white.svg";
 import blackdropdown from "./../../images/dropdown_black.svg";
 import whitedropdown from "./../../images/dropdown_white.svg";
+import FlagCard from "./FlagCard";
+import { useState } from "react";
 
-const MapSearch = ({darkMode}) => {
+const FlagSearch = ({darkMode, flags}) => {
     const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
+    const [page, setPage] = useState(0);
 
+    if(flags) 
+        console.log(flags[0]);
     return (
-        <div className="map_search">
-            <section className="map_search_header">
+        <div className="flagsearch">
+            <section className="flagsearch_header">
                 <form action="" className={"searchbar element" + (darkMode? " dark_element": "")}>
                     <button>
                         <img src={darkMode? blacksearch: whitesearch} alt="" />
@@ -22,16 +27,18 @@ const MapSearch = ({darkMode}) => {
                     </button>
                     <div className = {"element options " + (darkMode? " dark_element": "")}>
                         {regions.map(e => (
-                            <a className = {darkMode? "dark_text": ""} href = "#"key = {e}>{e}</a>
+                            <a className = {darkMode? "dark_text": ""} href = "#" key = {e}>{e}</a>
                         ))}
                     </div>
                 </div>
             </section>
-            <section className = "map_search_body">
-
+            <section className = "flagsearch_body">
+                { flags && flags.slice(page, page+8).map((e, i) => (
+                    <FlagCard flag={e} darkMode = {darkMode} key = {i} />
+                ))}
             </section>
         </div>
     );
 }
  
-export default MapSearch;
+export default FlagSearch;

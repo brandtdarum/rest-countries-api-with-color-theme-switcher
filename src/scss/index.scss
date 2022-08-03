@@ -3,7 +3,8 @@
 
 @import "./components/Header.scss";
 @import "./components/Attribution.scss";
-@import "./components/MapSearch.scss";
+@import "./components/FlagSearch.scss";
+@import "./components/FlagCard.scss";
 
 body {
     background-color: get-neutral(5);
