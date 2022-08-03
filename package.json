@@ -15,6 +15,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "sass": "sass --watch ./src/scss/index.scss ./src/css/index.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

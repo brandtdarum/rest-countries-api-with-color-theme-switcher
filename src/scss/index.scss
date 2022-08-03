@@ -1,0 +1,37 @@
+@import "functions";
+@import "reset";
+
+@import "./components/Header.scss";
+@import "./components/Attribution.scss";
+
+body {
+    background-color: get-neutral(5);
+
+    font-family: get-font-family();
+    transition: get-transition(2);
+}
+
+.element {
+    box-shadow: 0px 0px 5px 2px hsla(0, 0%, 0%, 0.1);
+}
+
+.dark_background {
+    background-color: get-neutral(2);
+    transition: get-transition(1);
+}
+
+.dark_element {
+    background-color: get-neutral(1);
+    transition: get-transition(1);
+}
+
+.dark_text {
+    color: get-neutral(6);
+    transition: get-transition(1);
+}
+
+
+
+.App {
+    min-height: 100vh;
+}

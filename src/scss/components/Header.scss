@@ -1,0 +1,37 @@
+$icon_size: 0.9rem;
+
+header {
+    padding: 20px 40px;
+
+    background-color: get-neutral(6);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    transition: get-transition(2);
+}
+
+.dark_mode {
+    padding: 5px;
+    border: none;
+    background-color: Transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+        margin-right: 5px;
+        width: $icon_size;
+        transition: get-transition(2);
+    }
+    p {
+        font-size: $icon_size;
+        font-weight: get-font-weight("normal");
+    }
+}

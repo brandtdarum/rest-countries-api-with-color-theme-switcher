@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "sass:list";
+
+@import "variables";
+
+/* GET FUNCTIONS */
+
+@function get-width($width-text: "mobile") {
+    @return map.get($width, $width-text);
+}
+
+@function get-primary($index: 1) {
+    @return list.nth($primary, $index);
+}
+
+@function get-neutral($index: 1) {
+    @return list.nth($neutral, $index);
+}
+
+@function get-font-size() {
+    @return $font-size;
+}
+
+@function get-font-family() {
+    @return $font-family;
+}
+
+@function get-font-weight($weight: "normal") {
+    @return map.get($font-weights, $weight);
+}
+
+@function get-transition($index: 1) {
+    @return list.nth($transition, $index);
+}
