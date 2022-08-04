@@ -5,6 +5,7 @@
 @import "./components/Attribution.scss";
 @import "./components/FlagSearch.scss";
 @import "./components/FlagCard.scss";
+@import "./components/Loading.scss";
 
 body {
     background-color: get-neutral(5);
@@ -34,6 +35,6 @@ body {
     transition: get-transition(1);
 }
 
-.App {
+.home {
     min-height: 100vh;
 }
