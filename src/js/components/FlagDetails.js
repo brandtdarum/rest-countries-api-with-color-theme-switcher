@@ -11,10 +11,20 @@ const FlagDetails = ({flags, darkMode}) => {
     const flagName = params.flagName;
 
     const navigate = useNavigate();
-    const getNativeNames = (array) {
+    const getName = (array, key) => {
         let string = ""
-        array.map(e => { string += e + ", "; })
+        Object.values(array).forEach(e => { string += e[key] + ", "; })
+
         return string.slice(0, -2);
+    }
+    const getLanguages = (array) => {
+        let string = "";
+        Object.values(array).forEach(e => string += e + ", ");
+
+        return string.slice(0, -2);
+    }
+    const toCommas = (number) => {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     useEffect(() => {
@@ -39,15 +49,18 @@ const FlagDetails = ({flags, darkMode}) => {
                 <div className="stats">
                     <h1>{selectedFlag.name.common}</h1>
                     <div>
-                        <span><strong>Native Name:</strong> {}</span>
-                        <span><strong>Population:</strong> {}</span>
-                        <span><strong>Region:</strong> {}</span>
-                        <span><strong>Sub region:</strong> {}</span>
-                        <span><strong>Capital:</strong> {}</span>
-                        <span><strong>Top Level Domain:</strong> {}</span>
-                        <span><strong>Currencies:</strong> {}</span>
-                        <span><strong>Languages:</strong> {}</span>
+                        <span><strong>Native Name:</strong> {getName(selectedFlag.name.nativeName, "common")}</span>
+                        <span><strong>Population:</strong> {toCommas(selectedFlag.population)}</span>
+                        <span><strong>Region:</strong> {selectedFlag.region}</span>
+                        <span><strong>Sub region:</strong> {selectedFlag.subregion}</span>
+                        <span><strong>Capital:</strong> {selectedFlag.capital[0]}</span>
+                        <span><strong>Top Level Domain:</strong> {selectedFlag.tld[0]}</span>
+                        <span><strong>Currencies:</strong> {getName(selectedFlag.currencies, "name")}</span>
+                        <span><strong>Languages:</strong> {getLanguages(selectedFlag.languages)}</span>
                     </div>
+                </div>
+                <div className="bordered">
+                    
                 </div>
             </div>
         </div>
