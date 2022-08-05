@@ -1,11 +1,20 @@
 import FlagCard from "./FlagCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Searchbar from "./Searchbar";
 import Loading from "./Loading";
+import usePagination from "../hooks/usePagination";
+import Pagination from "./Pagination";
 // import usePagination from "../hooks/usePagination";
 
 const FlagSearch = ({darkMode, flags}) => {
     const [currentPage, setCurrentPage] = useState(0);
+    const [itemCount, setItemCount] = useState(0);
+
+
+    useEffect(() => {
+        if(flags)
+            setItemCount(Object.keys(flags).length);
+    }, [flags]);
 
     return flags? (
         <div className="flagsearch">
@@ -16,6 +25,7 @@ const FlagSearch = ({darkMode, flags}) => {
                 ))}
             </section>
             <section className = "flagsearch_footer">
+                <Pagination darkMode = {darkMode} currentPage = {currentPage} setCurrentPage = {setCurrentPage} itemCount = {itemCount} />
             </section>
         </div>
     ) : <Loading />;

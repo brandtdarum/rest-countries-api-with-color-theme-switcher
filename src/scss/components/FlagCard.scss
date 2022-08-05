@@ -13,6 +13,10 @@
 
         object-fit: fill;
     }
+
+    &:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+    }
 }
 
 .details {

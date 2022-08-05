@@ -15,6 +15,7 @@ header {
 .dark_mode {
     padding: 5px;
     border: none;
+    border-radius: 5px;
     background-color: Transparent;
 
     display: flex;
@@ -30,4 +31,5 @@ header {
         font-size: get-icon-size();
         font-weight: get-font-weight("normal");
     }
+
 }
