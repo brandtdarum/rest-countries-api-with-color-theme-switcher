@@ -51,7 +51,7 @@ const FlagDetails = ({flags, darkMode}) => {
                         <span className = {darkMode? "dark_text": ""}><strong>Population:</strong> {toCommas(selectedFlag.population)}</span>
                         <span className = {darkMode? "dark_text": ""}><strong>Region:</strong> {selectedFlag.region}</span>
                         <span className = {darkMode? "dark_text": ""}><strong>Sub region:</strong> {selectedFlag.subregion}</span>
-                        <span className = {darkMode? "dark_text": ""}><strong>Capital:</strong> {selectedFlag.capital[0]}</span>
+                        <span className = {darkMode? "dark_text": ""}><strong>Capital:</strong> {(selectedFlag.capital)? selectedFlag.capital[0]: "None"}</span>
                         <span className = {darkMode? "dark_text": ""}><strong>Top Level Domain:</strong> {selectedFlag.tld[0]}</span>
                         <span className = {darkMode? "dark_text": ""}><strong>Currencies:</strong> {getName(selectedFlag.currencies, "name")}</span>
                         <span className = {darkMode? "dark_text": ""}><strong>Languages:</strong> {getLanguages(selectedFlag.languages)}</span>
@@ -59,11 +59,12 @@ const FlagDetails = ({flags, darkMode}) => {
 
                     <div className="borders">
                         <span className = {darkMode? "dark_text": ""}><strong>Border Countries: </strong></span>
-                        {selectedFlag.borders && selectedFlag.borders.map(e => (
+                        {(selectedFlag.borders)? selectedFlag.borders.map(e => (
                             <button className = {"element" + (darkMode? " dark_element": "")} onClick={() => navigate("/rest-countries-api-with-color-theme-switcher/flag/" + e)} key = {e} >
                                 <span className = {darkMode? "dark_text": ""}>{flags[e].name.common}</span>
-                            </button>
-                        ))}
+                            </button>)):
+                            <span>None</span>
+                        }
                     </div>
                 </div>
             </div>

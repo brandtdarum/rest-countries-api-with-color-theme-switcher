@@ -193,7 +193,7 @@ header h1 {
 .flagsearch_body {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 3%;
 }
 
@@ -209,7 +209,7 @@ header h1 {
   overflow: hidden;
   height: fit-content;
   min-height: 350px;
-  flex: 0 20%;
+  flex: 0 22%;
 }
 .flagcard img {
   width: 100%;

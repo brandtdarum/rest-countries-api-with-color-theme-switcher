@@ -3,12 +3,20 @@ import { useEffect, useState } from "react";
 import Searchbar from "./Searchbar";
 import Loading from "./Loading";
 import Pagination from "./Pagination";
-// import usePagination from "../hooks/usePagination";
 
 const FlagSearch = ({darkMode, flags}) => {
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
     const [itemCount, setItemCount] = useState(0);
 
+    const getPageContent = () => {
+        const currentPageIndex = (currentPage - 1) * 8;
+        let lastIndex = currentPageIndex + 8;
+
+        if((currentPageIndex + 7) >= itemCount)
+            lastIndex = itemCount - 1;
+
+        return Object.values(flags).slice(currentPageIndex, lastIndex);
+    }
 
     useEffect(() => {
         if(flags)
@@ -19,7 +27,7 @@ const FlagSearch = ({darkMode, flags}) => {
         <div className="flagsearch">
             <Searchbar darkMode = {darkMode} />
             <section className = "flagsearch_body">
-                { flags && Object.values(flags).slice(currentPage-1, currentPage+7).map((e, i) => (
+                { flags && getPageContent().map((e, i) => (
                     <FlagCard flag={e} darkMode = {darkMode} key = {i} />
                 ))}
             </section>

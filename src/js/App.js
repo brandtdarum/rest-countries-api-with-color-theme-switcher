@@ -4,14 +4,15 @@ import Header from "./components/Header";
 import FlagSearch from "./components/FlagSearch";
 import FlagDetails from "./components/FlagDetails";
 import useFetch from "./hooks/useFetch";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useSearchParams } from "react-router-dom";
 
 let request = new XMLHttpRequest();
 
 
 
 function App() {
-  const {flags, isPending, error} = useFetch('https://restcountries.com/v3.1/all');
+  const [queries, setQueries] = useSearchParams();
+  const {flags, isPending, error} = useFetch('https://restcountries.com/v3.1/all', queries);
   const [darkMode, setDarkMode] = useState(false);
 
   return (

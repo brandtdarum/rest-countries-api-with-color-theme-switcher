@@ -20,13 +20,13 @@ const usePagination = ({
 
     /* CASE 1: total pages is less than page count */
     if(pageCount >= totalPages)
-      return range(0, totalPages - 1);
+      return range(1, totalPages);
 
     //check index of left and right sibling
     const leftSibling = Math.max(currentPage - sibling, 1);
     const rightSibling = Math.min(currentPage + sibling, totalPages);
     
-    const leftDots = leftSibling > 2;
+    const leftDots = leftSibling > 3;
     const rightDots = rightSibling < totalPages - 2;
 
     /* CASE 2: no left dots, yes right dots */

@@ -11,6 +11,7 @@ const Pagination = ({darkMode, currentPage, setCurrentPage, itemCount}) => {
         console.log("Do this later");
     }
 
+    console.log(paginationRange);
     return (
         <div className="pagination">
             <button 

@@ -10,7 +10,7 @@ const FlagCard = ({flag, darkMode}) => {
                 <h2 className = {darkMode? "dark_text": ""}>{flag.name.common}</h2>
                 <span className = {darkMode? "dark_text": ""}>Population: {flag.population}</span>
                 <span className = {darkMode? "dark_text": ""}>Region: {flag.region}</span>
-                <span className = {darkMode? "dark_text": ""}>Capital: {flag.capital[0]}</span>
+                <span className = {darkMode? "dark_text": ""}>Capital: {(flag.capital)? flag.capital[0]: "None"}</span>
             </div>
         </div>
     );
