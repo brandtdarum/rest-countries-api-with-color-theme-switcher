@@ -2,7 +2,6 @@ import FlagCard from "./FlagCard";
 import { useEffect, useState } from "react";
 import Searchbar from "./Searchbar";
 import Loading from "./Loading";
-import usePagination from "../hooks/usePagination";
 import Pagination from "./Pagination";
 // import usePagination from "../hooks/usePagination";
 
@@ -20,7 +19,7 @@ const FlagSearch = ({darkMode, flags}) => {
         <div className="flagsearch">
             <Searchbar darkMode = {darkMode} />
             <section className = "flagsearch_body">
-                { flags && Object.values(flags).slice(currentPage, currentPage+8).map((e, i) => (
+                { flags && Object.values(flags).slice(currentPage-1, currentPage+7).map((e, i) => (
                     <FlagCard flag={e} darkMode = {darkMode} key = {i} />
                 ))}
             </section>

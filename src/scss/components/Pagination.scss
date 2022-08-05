@@ -1,0 +1,26 @@
+.pagination {
+    width: fit-content;
+
+    display: flex;
+    gap: 10px;
+
+    button {
+        width: 3rem;
+        height: 3rem;
+        border: 0;
+        border-radius: 100%;
+
+        background-color: get-neutral(5);
+        transition: get-transition(1);
+
+    }
+
+    button.dark_page {
+        background-color: get-neutral(2);
+        transition: get-transition(1);
+    }
+
+    button.disabled {
+        pointer-events: none;
+    }
+}

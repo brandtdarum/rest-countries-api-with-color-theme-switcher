@@ -197,6 +197,12 @@ header h1 {
   gap: 3%;
 }
 
+.flagsearch_footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .flagcard {
   margin: 2% 0;
   border-radius: 5px;
@@ -336,6 +342,27 @@ header h1 {
     border-right-color: #7fc4d1;
   }
 }
+.pagination {
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+}
+.pagination button {
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  border-radius: 100%;
+  background-color: #fafafa;
+  transition: 0.1s ease-in;
+}
+.pagination button.dark_page {
+  background-color: #202c37;
+  transition: 0.1s ease-in;
+}
+.pagination button.disabled {
+  pointer-events: none;
+}
+
 body {
   background-color: #fafafa;
   font-family: "Nunito Sans", sans-serif;
@@ -344,6 +371,7 @@ body {
 
 button:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+  transition: 0.1s ease-in;
 }
 
 .element {

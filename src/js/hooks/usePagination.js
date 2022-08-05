@@ -13,8 +13,6 @@ const usePagination = ({
   sibling = 1
 }) => {
   const paginationRange = useMemo(() => {
-    console.log("Sup");
-
     const totalPages = Math.ceil(itemCount/pageItems);
     const dots = -1;
 
