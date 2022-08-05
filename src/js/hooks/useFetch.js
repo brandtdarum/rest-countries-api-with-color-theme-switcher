@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
-    const [data, setData] = useState(null);
+    const [flags, setFlags] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
+
+    const listToDict = (list) => {
+        const dict = list.reduce((a, v) => {
+            return {...a, [v.cca3]: v};
+        }, {});
+
+        return dict;
+    };
 
     useEffect(() => {
         fetch(url)
@@ -13,7 +21,7 @@ const useFetch = (url) => {
                 return res.json();
             })
             .then(data => {
-                setData(data);
+                setFlags(listToDict(data));
                 setIsPending(false);
                 setError(null);
             })
@@ -23,7 +31,7 @@ const useFetch = (url) => {
             })
     }, [url]);
 
-    return ({data, isPending, error});
+    return ({flags, isPending, error});
 }
  
 export default useFetch;

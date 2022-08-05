@@ -4,7 +4,7 @@ const FlagCard = ({flag, darkMode}) => {
     const navigate = useNavigate();
 
     return (
-        <div onClick={() => navigate('flag/' + flag.name.common)} className= {"flagcard element" + (darkMode? " dark_element": "")}>
+        <div onClick={() => navigate('flag/' + flag.cca3)} className= {"flagcard element" + (darkMode? " dark_element": "")}>
             <img src={flag.flags.png} alt="" />
             <div className="details">
                 <h2 className = {darkMode? "dark_text": ""}>{flag.name.common}</h2>
