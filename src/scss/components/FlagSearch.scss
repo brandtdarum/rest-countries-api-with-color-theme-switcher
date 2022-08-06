@@ -80,7 +80,7 @@
             transform 0.1s ease-in 500ms;
 
 
-        a {
+        span {
             padding: 0.5rem 1rem;
             width: 100%;
 
@@ -88,7 +88,7 @@
             font-size: 0.8rem;
         }
 
-        a:hover {
+        span:hover {
             background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
         }
     }

@@ -174,13 +174,13 @@ header h1 {
   z-index: -1;
   transition: z-index 0.1s ease-in 500ms, opacity 0.1s ease-in 500ms, transform 0.1s ease-in 500ms;
 }
-.dropdown .options a {
+.dropdown .options span {
   padding: 0.5rem 1rem;
   width: 100%;
   text-decoration: none;
   font-size: 0.8rem;
 }
-.dropdown .options a:hover {
+.dropdown .options span:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
 }
 .dropdown:hover .options, .dropdown .options:hover {

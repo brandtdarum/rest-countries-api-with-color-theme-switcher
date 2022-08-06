@@ -1,16 +1,25 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url, queries) => {
+const useFetch = (url, fetchFlag, queries) => {
     const [flags, setFlags] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
     const filterData = (list) => {
+        let newList = list
         let region = queries.get("region")
-        if(region)
-            return list.filter(e => e.region === region);
+        let search = queries.get("search");
 
-        return list;
+        console.log(region, search);
+
+        if(region)
+            newList = newList.filter(e => e.region === region);
+
+        if(search)
+            newList = newList.filter(e => e.name.common.toLowerCase().includes(search.toLowerCase()));
+
+        console.log(newList);
+        return newList;
     }
 
     const listToDict = (list) => {
@@ -23,6 +32,8 @@ const useFetch = (url, queries) => {
     };
 
     useEffect(() => {
+        setIsPending(true);
+        
         fetch(url)
             .then(res => {
                 if(!res.ok) 
@@ -38,7 +49,7 @@ const useFetch = (url, queries) => {
                 setIsPending(false);
                 setError(err.message);
             })
-    }, [url]);
+    }, [url, fetchFlag]);
 
     return ({flags, isPending, error});
 }
